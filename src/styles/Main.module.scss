@@ -1,0 +1,203 @@
+// decided to keep in one module and one styles folder. As the project is small.
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.videoSection {
+  display: flex;
+  gap: 2em;
+  padding: 20px 0;
+  justify-content: space-evenly;
+  max-width: 80%;
+  flex-direction: column;
+  max-width: 95vw;
+
+  @media (min-width: 992px) {
+    max-width: 80%;
+    flex-direction: row;
+  }
+}
+
+.usersSection {
+  width: 95%;
+}
+
+.loader {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+// Users module
+.table {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-gap: 1px;
+  padding: 1px;
+  grid-template-areas:
+    'profile profile profile status chat'
+    'profile profile profile age age'
+    'name name name location location';
+  margin-bottom: 40px;
+  background-color: #c6c9f8;
+
+  @media (min-width: 600px) {
+    grid-template-areas:
+      'profile name name'
+      'profile status chat'
+      'age status chat'
+      'location location location';
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 3fr 4fr 3fr 3fr;
+  }
+
+  @media (min-width: 992px) {
+    grid-template-areas: 'profile name status location age chat';
+    grid-template-rows: none;
+    grid-template-columns: repeat(6, 1fr);
+    margin-bottom: -1px;
+  }
+}
+
+.table > * {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px 10px;
+
+  @media (min-width: 600px) {
+    padding: 7px;
+  }
+
+  @media (min-width: 992px) {
+    padding: 10px 0;
+  }
+}
+
+.chatArea {
+  grid-area: chat;
+}
+
+.chat {
+  background-color: #c6c9f8;
+  padding: 7px 12px;
+  border-radius: 15px;
+  display: none;
+  cursor: pointer;
+
+  @media (min-width: 600px) {
+    display: block;
+  }
+}
+
+.chatIcon {
+  display: block;
+
+  @media (min-width: 600px) {
+    display: none;
+  }
+}
+
+.chatDisabled {
+  opacity: 0.7;
+  cursor: auto;
+}
+
+.profile {
+  grid-area: profile;
+  padding: 0;
+
+  @media (min-width: 992px) {
+    padding: 10px 0;
+  }
+}
+
+.profileImage {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  @media (min-width: 600px) {
+    width: 60px;
+    height: 60px;
+  }
+
+  @media (min-width: 992px) {
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+  }
+}
+
+.status {
+  grid-area: status;
+}
+
+.age {
+  grid-area: age;
+}
+
+.name {
+  grid-area: name;
+}
+
+.location {
+  grid-area: location;
+}
+
+// Video module
+.video {
+  flex: 1;
+  border: none;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.videoButton {
+  flex: 1;
+  position: relative;
+}
+
+.videoInfo {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  flex: 1;
+}
+
+.videoPreview {
+  border: none;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.youtubeButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// media queries
+@media (min-width: 600px) {
+  .profileImage img {
+    border-radius: 100px;
+  }
+}
+
+@media (min-width: 992px) {
+  .profileImage img {
+    border-radius: 100px;
+  }
+}

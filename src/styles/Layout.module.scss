@@ -1,0 +1,30 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (min-width: 992px) {
+    width: 100vw;
+  }
+
+  @media (min-width: 1200px) {
+    width: 83%;
+  }
+
+  @media (min-width: 1400px) {
+    width: 83%;
+  }
+}
+
+.header {
+  background-color: #111;
+  height: 7vh;
+}
+
+.footer {
+  background-color: #111;
+  height: 7vh;
+  margin-top: auto;
+}
